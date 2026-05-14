@@ -126,3 +126,6 @@ footer{
 /* Guidebook edition enhancements */
 .hero-panel p{font-size:1.02rem}.restaurant-card:target,.essay:target,.mini-card:target{outline:3px solid rgba(143,91,46,.35);background:#fffaf1}.restaurant-card .meta{letter-spacing:.02em}.essay h3{color:#2b2a25}.toc a:hover{background:var(--accent2);color:#fff}.source-box a{word-break:break-word}.region-hero ul{margin:.4rem 0 0;padding-left:1.2rem}.region-hero li{margin:.35rem 0}.hero-panel{margin-bottom:24px}.panel h2:first-child{margin-top:0}
 .slot a{font-weight:800}.slot a:hover{background:rgba(39,76,67,.08)}
+
+/* Food guide v4 */
+.hero-panel .toc{margin-top:18px}.restaurant-card{scroll-margin-top:18px}.restaurant-card p{font-size:1rem}.restaurant-card .meta{font-size:.92rem}.restaurant-card h3{letter-spacing:-.01em}.restaurant-card .verdict{background:rgba(239,226,207,.42);border-radius:12px;padding:12px 14px;border-top:1px solid var(--line)}
