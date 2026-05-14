@@ -56,3 +56,7 @@ img{max-width:100%;display:block}
 .essay-wide-photo{margin:32px 0 0;border-top:1px solid var(--line);padding-top:18px}
 .essay-wide-photo img{width:100%;max-height:340px;object-fit:cover;filter:saturate(.84) contrast(.94)}
 @media(max-width:900px){.hero-layout{grid-template-columns:1fr;padding-right:20px}.hero-with-photo .hero-text{padding:72px 0 36px}.hero-photo{min-height:320px;border-left:0;border-top:1px solid var(--line)}.hero-photo:before{background:linear-gradient(0deg,rgba(245,240,230,.85),rgba(245,240,230,.12))}.preview-media,.visual-diptych,.culture-visual-row{grid-template-columns:1fr}.preview-image{width:100%;max-height:240px;aspect-ratio:16/9}.page-hero.photo-hero{background-position:center}.closing-visual p{font-size:1.16rem}.card-image{height:190px}}
+
+
+/* Map links */
+.map-section{scroll-margin-top:110px;border-top:1px solid var(--line);padding:38px 0}.map-section h2{font-size:2rem;font-weight:400;margin:0 0 18px}.map-links{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);background:rgba(255,255,255,.12)}.map-links li{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 16px;min-height:76px}.map-links a{font-size:1.02rem;text-decoration:none}.map-links span{display:block;color:var(--muted);font-size:.82rem;line-height:1.55;margin-top:3px;font-family:"Noto Sans TC","Source Han Sans TC",sans-serif}@media(max-width:760px){.map-links{grid-template-columns:1fr}}
