@@ -12,10 +12,11 @@ Pages:
 - food.html
 - maps.html
 
-Upload the whole folder to your web host, or copy these files into a subfolder such as `2026-hokuriku/`.
-
-Notes:
-- Traditional Chinese is the main language.
-- Japanese place names are included in parentheses where useful.
+Version note:
+- Culture notes and dining notes expanded into guidebook-style long-form Traditional Chinese.
+- Place names include Japanese where useful.
+- Restaurant write-ups focus on role, local context, and selection rationale.
 - Reservation numbers, personal names and sensitive details have been omitted.
 - Japan activities use JST / Asia-Tokyo.
+
+Upload the whole folder to your web host, or copy these files into a subfolder such as `2026-hokuriku/`.
