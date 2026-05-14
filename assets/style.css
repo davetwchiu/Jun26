@@ -24,3 +24,35 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.42;ba
 .strip-item a{display:inline-block;text-decoration:none;color:inherit}
 .strip-item a:hover{color:var(--rust);text-decoration:underline;text-underline-offset:.25em}
 .city-card{min-height:260px}
+
+/* Visual implementation from wabi-sabi mockups */
+img{max-width:100%;display:block}
+.hero-with-photo{display:block;min-height:0;border-bottom:1px solid var(--line)}
+.hero-layout{display:grid;grid-template-columns:minmax(0,.86fr) minmax(460px,1.18fr);gap:0;align-items:stretch;padding-right:0}
+.hero-with-photo .hero-text{padding:86px 40px 70px 0;align-self:center}
+.hero-photo{margin:0;min-height:560px;position:relative;overflow:hidden;border-left:1px solid var(--line)}
+.hero-photo:before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,var(--paper) 0%,rgba(245,240,230,.78) 18%,rgba(245,240,230,.08) 48%,rgba(245,240,230,0) 70%)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(.96)}
+.hero-photo figcaption{position:absolute;right:22px;bottom:16px;z-index:3;font-size:.82rem;color:#4e514a;background:rgba(245,240,230,.35);padding:2px 6px}
+.card-image{margin:28px 0 0;border-top:1px solid var(--line);height:170px;overflow:hidden;background:rgba(255,255,255,.12)}
+.card-image img{width:100%;height:100%;object-fit:cover;filter:saturate(.86) contrast(.94);transition:transform .8s ease}
+.city-card:hover .card-image img{transform:scale(1.03)}
+.preview-media{display:grid;grid-template-columns:150px minmax(0,1fr);gap:26px;align-items:start}
+.preview-image{margin:0;width:150px;aspect-ratio:4/5;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,.18)}
+.preview-image img{width:100%;height:100%;object-fit:cover;filter:saturate(.86) contrast(.96)}
+.closing-visual{position:relative;min-height:230px;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:center}
+.closing-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(245,240,230,.96) 0%,rgba(245,240,230,.82) 42%,rgba(245,240,230,.25) 72%,rgba(245,240,230,0) 100%);z-index:1}
+.closing-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(.92)}
+.closing-visual .wrap{position:relative;z-index:2}.closing-visual p{font-size:1.45rem;line-height:1.7;max-width:700px;margin:0;color:var(--ink);letter-spacing:.08em}
+.page-hero.photo-hero{position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(245,240,230,.98) 0%,rgba(245,240,230,.90) 42%,rgba(245,240,230,.50) 64%,rgba(245,240,230,.12) 100%),var(--hero-url);background-size:cover;background-position:center right;min-height:330px;display:flex;align-items:center}
+.page-hero.photo-hero .wrap{position:relative;z-index:2}.page-hero.photo-hero .intro{max-width:640px}
+.visual-diptych{max-width:1120px;margin:-10px auto 58px;display:grid;grid-template-columns:1.2fr .8fr;gap:22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0}
+.visual-diptych figure{margin:0;position:relative;overflow:hidden;min-height:240px;background:rgba(255,255,255,.14)}
+.visual-diptych img{width:100%;height:100%;object-fit:cover;filter:saturate(.86) contrast(.95)}
+.visual-diptych figcaption,.culture-visual-row figcaption,.essay-wide-photo figcaption{font-size:.82rem;color:var(--muted);margin-top:8px;text-align:right}
+.culture-visual-row{max-width:980px;margin:-22px auto 56px;display:grid;grid-template-columns:1fr .75fr;gap:24px;align-items:end;border-bottom:1px solid var(--line);padding-bottom:26px}
+.culture-visual-row figure{margin:0}.culture-visual-row img{width:100%;height:300px;object-fit:cover;border:1px solid var(--line);filter:saturate(.82) contrast(.94)}
+.culture-visual-row figure:nth-child(2) img{height:380px}
+.essay-wide-photo{margin:32px 0 0;border-top:1px solid var(--line);padding-top:18px}
+.essay-wide-photo img{width:100%;max-height:340px;object-fit:cover;filter:saturate(.84) contrast(.94)}
+@media(max-width:900px){.hero-layout{grid-template-columns:1fr;padding-right:20px}.hero-with-photo .hero-text{padding:72px 0 36px}.hero-photo{min-height:320px;border-left:0;border-top:1px solid var(--line)}.hero-photo:before{background:linear-gradient(0deg,rgba(245,240,230,.85),rgba(245,240,230,.12))}.preview-media,.visual-diptych,.culture-visual-row{grid-template-columns:1fr}.preview-image{width:100%;max-height:240px;aspect-ratio:16/9}.page-hero.photo-hero{background-position:center}.closing-visual p{font-size:1.16rem}.card-image{height:190px}}
