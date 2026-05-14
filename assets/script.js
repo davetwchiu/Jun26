@@ -1,6 +1,5 @@
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('a[href^="#"], a[href*=".html#"]').forEach(a => {
-    a.addEventListener('click', () => document.body.classList.add('anchor-used'));
-  });
-});
+(function(){
+  const links=[...document.querySelectorAll('.nav a')];
+  const here=(location.pathname.split('/').pop()||'index.html');
+  links.forEach(a=>{if(a.getAttribute('href')===here)a.setAttribute('aria-current','page')});
+})();
