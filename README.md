@@ -1,16 +1,5 @@
-# 2026 大阪・富山・金沢 Travel Website
+# 2026 大阪・富山・金沢 旅程誌
 
-Static multi-page Chinese travel website for the 19 June–30 June 2026 Osaka, Toyama and Kanazawa itinerary.
+靜態多頁網站。設計方向採用侘び寂び式的留白、低飽和色彩、紙感背景、細線分隔與編輯式長文排版。
 
-## Pages
-
-- `index.html` — overview and navigation
-- `itinerary.html` — full day-by-day itinerary; restaurant names link to the restaurant sections in `food.html`
-- `osaka.html`, `toyama.html`, `kanazawa.html` — region-specific guide pages
-- `culture.html` — long-form cultural and historical notes
-- `food.html` — restaurant-by-restaurant guide with background, itinerary role and reading notes
-- `maps.html` — map links
-
-## Notes
-
-Reservation numbers, names and sensitive details were deliberately removed. Times are in JST unless otherwise stated. Confirm flight, transport, restaurant and hotel details against live bookings before travel.
+上載方式：把整個資料夾上載到網站子目錄，例如 `/2026-hokuriku/`。
