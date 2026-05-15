@@ -1,0 +1,1 @@
+v18: Updated 24/6 and 26/6 according to Google Calendar; removed day-card time-slot counts from daily.html; strengthened deep-itinerary and culture notes on Takaoka casting, Yamachosuji, Sugano residence and Mikurumayama.
