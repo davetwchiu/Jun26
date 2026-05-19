@@ -4,6 +4,13 @@
   const prefix=inDays?'../':'';
   const file=(location.pathname.split('/').pop()||'index.html');
 
+  // Disable smooth-scrolling effects site-wide. Keep anchor behaviour instant.
+  document.documentElement.style.scrollBehavior='auto';
+  document.body.style.scrollBehavior='auto';
+  const noSmooth=document.createElement('style');
+  noSmooth.textContent='html, body, * { scroll-behavior: auto !important; }';
+  document.head.appendChild(noSmooth);
+
   const items=[
     ['index.html','首頁','home'],
     ['itinerary.html','全行程','itinerary'],
@@ -51,7 +58,7 @@
     document.body.appendChild(topLink);
     topLink.addEventListener('click', function(e){
       e.preventDefault();
-      window.scrollTo({top:0, behavior:'smooth'});
+      window.scrollTo(0,0);
       history.replaceState(null, '', location.pathname + location.search);
     });
   }
