@@ -64,6 +64,7 @@
       min-height:360px;
       display:flex;
       align-items:center;
+      justify-content:flex-start;
       background:
         linear-gradient(90deg,rgba(245,240,230,.98) 0%,rgba(245,240,230,.94) 30%,rgba(245,240,230,.72) 52%,rgba(245,240,230,.36) 74%,rgba(245,240,230,.12) 100%),
         radial-gradient(ellipse at 30% 50%,rgba(245,240,230,.90),rgba(245,240,230,.38) 55%,rgba(245,240,230,.08) 100%),
@@ -80,8 +81,16 @@
       background:rgba(245,240,230,.10);
       backdrop-filter:saturate(.60) contrast(.92) brightness(1.08);
     }
-    .page-hero.atmosphere-hero .wrap{position:relative;z-index:2}
-    .page-hero.atmosphere-hero h1,.page-hero.atmosphere-hero .subtitle,.page-hero.atmosphere-hero .intro,.page-hero.atmosphere-hero .kicker{max-width:670px}
+    .page-hero.atmosphere-hero .wrap{
+      position:relative;
+      z-index:2;
+      width:100%;
+      max-width:var(--max);
+      margin-left:auto;
+      margin-right:auto;
+      text-align:left;
+    }
+    .page-hero.atmosphere-hero h1,.page-hero.atmosphere-hero .subtitle,.page-hero.atmosphere-hero .intro,.page-hero.atmosphere-hero .kicker{max-width:670px;text-align:left}
     .page-hero.atmosphere-hero .image-note{position:absolute;right:24px;bottom:16px;z-index:3;background:rgba(245,240,230,.62);border:1px solid rgba(200,185,159,.55);font-size:.78rem;color:var(--muted);padding:2px 7px;line-height:1.5}
     @media(max-width:900px){
       .page-hero.atmosphere-hero{min-height:340px;background-position:center center !important}
