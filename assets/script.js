@@ -72,6 +72,74 @@
     if(!document.querySelector('.photo-credit-style')){const style=document.createElement('style');style.className='photo-credit-style';style.textContent='.photo-credit{display:block;margin-top:4px;font-size:.74rem;color:var(--muted);opacity:.82}';document.head.appendChild(style);}
   }
 
+  const smartCrossLinks=[
+    ['富山市ガラス美術館','museum-toyama-glass.html'],['TOYAMA キラリ','museum-toyama-glass.html'],['大阪市立東洋陶磁美術館','culture-osaka-museums.html'],['大阪中之島美術館','culture-osaka-museums.html'],['金沢21世紀美術館','culture-kanazawa-21st-century-museum.html'],['鈴木大拙館','museum-kanazawa-suzuki.html'],['金沢蓄音器館','museum-kanazawa-phonograph.html'],['大樋美術館','museum-kanazawa-crafts.html#ohi'],['安江金箔工芸館','museum-kanazawa-crafts.html#goldleaf'],
+    ['兼六園','culture-kanazawa-kenrokuen.html'],['四天王寺','culture-osaka.html#osaka-shitennoji'],['大阪くらしの今昔館','culture-osaka.html#osaka-daily-life'],['中之島','culture-osaka.html#osaka-water-market'],['堂島','culture-osaka.html#osaka-water-market'],['北新地','culture-osaka.html#osaka-night'],['空堀','culture-osaka.html#osaka-daily-life'],['天満','culture-osaka.html#osaka-night'],['京橋','culture-osaka.html#osaka-night'],['針中野','culture-osaka.html#osaka-daily-life'],['駒川','culture-osaka.html#osaka-daily-life'],
+    ['富岩水上ライン','culture-toyama.html#toyama-iwase'],['旧森家住宅','culture-toyama.html#toyama-iwase'],['岩瀬大町通り','culture-toyama.html#toyama-iwase'],['桝田酒造','culture-toyama.html#toyama-iwase'],['北前船','culture-toyama.html#toyama-iwase'],['岩瀬','culture-toyama.html#toyama-iwase'],['環水公園','culture-toyama.html#toyama-geography'],
+    ['菅野家住宅','culture-takaoka.html#takaoka-yamachosuji'],['山町筋','culture-takaoka.html#takaoka-yamachosuji'],['鋳物工房 利三郎','culture-takaoka.html#takaoka-casting'],['利三郎','culture-takaoka.html#takaoka-casting'],['鋳物体験','culture-takaoka.html#takaoka-casting'],['金屋町','culture-takaoka.html#takaoka-casting'],['高岡御車山会館','culture-takaoka.html#takaoka-mikurumayama'],['御車山','culture-takaoka.html#takaoka-mikurumayama'],['高岡大仏','culture-takaoka.html#takaoka-casting'],['瑞龍寺','culture-takaoka.html#takaoka-zuiryuji'],
+    ['八日町通り','culture-nanto.html#nanto-inami'],['瑞泉寺','culture-nanto.html#nanto-inami'],['井波','culture-nanto.html#nanto-inami'],['南砺','culture-nanto.html#nanto-toga'],['利賀','culture-nanto.html#nanto-toga'],
+    ['大野からくり記念館','culture-kanazawa.html#kanazawa-port'],['金沢港','culture-kanazawa.html#kanazawa-port'],['室生犀星記念館','culture-kanazawa.html#kanazawa-literature'],['室生犀星','culture-kanazawa.html#kanazawa-literature'],['犀川','culture-kanazawa.html#kanazawa-literature'],['西茶屋街','culture-kanazawa-crafts.html#kanazawa-old-town'],['尾張町','culture-kanazawa-crafts.html#kanazawa-old-town'],['主計町','culture-kanazawa-crafts.html#kanazawa-old-town'],['暗がり坂','culture-kanazawa-crafts.html#kanazawa-old-town'],['大樋焼','museum-kanazawa-crafts.html#ohi'],['金箔','museum-kanazawa-crafts.html#goldleaf'],['片町','culture-kanazawa-crafts.html#kanazawa-night'],
+    ['十皿','food.html#tosara'],['WINE食堂 緒乃','food.html#ono'],['緒乃','food.html#ono'],['継みき','food.html#tsugimiki'],['上田商店','food.html#ueda'],['島之内フジマル醸造所','food.html#fujimaru'],['フジマル','food.html#fujimaru'],['スタンドくーま君','food.html#kuumakun'],['くーま君','food.html#kuumakun'],['炭火いわ田','food.html#iwata'],['一粒一粒','food.html#hitotsubu'],['冨久屋','food.html#fukuya'],['Piatto Suzuki Cinque','food.html#piatto'],['ひまわり食堂2','food.html#himawari'],['AhoraAqui','food.html#ahoraaqui'],['柳緑','food.html#ryuroku'],['ランソレイエ','food.html#lensoleiller'],['L’evo','food.html#levo'],['すし処鳴海','food.html#narumi'],['すし処 鳴海','food.html#narumi'],['立喰い鮨 優勝','food.html#yusho'],['respiracion','food.html#respiracion'],['ENSO','food.html#enso'],['赤玉','food.html#akadama'],['鮨 木場谷','food.html#kibatani']
+  ];
+
+  function linkTargetInfo(href){
+    const raw=href.replace(/^\.\//,'').replace(/^\.\.\//,'');
+    const parts=raw.split('#');
+    return {file:parts[0]||file, hash:parts[1]||''};
+  }
+  function nearestSectionId(el){
+    const section=el.closest('main section[id], main article[id], main div[id]');
+    return section ? section.id : '';
+  }
+  function shouldSkipSmartLink(node, href){
+    let el=node.parentElement;
+    while(el){
+      if(['A','SCRIPT','STYLE','TEXTAREA','INPUT','BUTTON','NOSCRIPT','H1','H2','H3','H4','H5','H6','FIGCAPTION'].includes(el.tagName)) return true;
+      if(el.closest && el.closest('.site-header,.nav,footer,.page-hero,.subtitle,.kicker,.small-caps,.brand-title,.brand-sub,.culture-index,.daily-nav,.related-links,.day-related-links,.map-links,.source-links,.prev-next')) return true;
+      el=el.parentElement;
+    }
+    const target=linkTargetInfo(href);
+    if(target.file===file){
+      const sectionCount=document.querySelectorAll('main section[id], main article[id]').length;
+      if(!target.hash || sectionCount<=1) return true;
+      if(nearestSectionId(node.parentElement)===target.hash) return true;
+    }
+    return false;
+  }
+  function smartAutoLink(){
+    const main=document.querySelector('main'); if(!main) return;
+    const usedByScope=new Set();
+    const terms=smartCrossLinks.slice().sort((a,b)=>b[0].length-a[0].length);
+    terms.forEach(([term,href])=>{
+      const walker=document.createTreeWalker(main,NodeFilter.SHOW_TEXT,{acceptNode(node){
+        if(!node.nodeValue || !node.nodeValue.includes(term)) return NodeFilter.FILTER_REJECT;
+        if(shouldSkipSmartLink(node,href)) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }});
+      const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node=>{
+        const scope=nearestSectionId(node.parentElement)||'page';
+        const key=scope+'|'+term+'|'+href;
+        if(usedByScope.has(key)) return;
+        const text=node.nodeValue;
+        const index=text.indexOf(term);
+        if(index<0) return;
+        const frag=document.createDocumentFragment();
+        if(index>0) frag.appendChild(document.createTextNode(text.slice(0,index)));
+        const a=document.createElement('a');
+        a.href=prefix+href;
+        a.textContent=term;
+        a.className='auto-crosslink';
+        frag.appendChild(a);
+        const after=text.slice(index+term.length);
+        if(after) frag.appendChild(document.createTextNode(after));
+        node.parentNode.replaceChild(frag,node);
+        usedByScope.add(key);
+      });
+    });
+  }
+  smartAutoLink();
+
   if(!document.getElementById('back-to-top')){
     const topLink=document.createElement('a');topLink.id='back-to-top';topLink.className='back-to-top';topLink.href='#top';topLink.setAttribute('aria-label','回頁首');topLink.textContent='回頁首 ↑';document.body.appendChild(topLink);
     topLink.addEventListener('click',function(e){e.preventDefault();window.scrollTo(0,0);history.replaceState(null,'',location.pathname+location.search);});
