@@ -123,15 +123,15 @@
 
   if(file==='itinerary.html'){
     const photos=[
-      {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Osaka_City_Central_Public_Hall.jpg/900px-Osaka_City_Central_Public_Hall.jpg', alt:'大阪市中央公會堂與中之島近代建築', caption:['大阪：中之島近代建築','中央公會堂把水都、商都和公共文化空間連在一起。']},
-      {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Shitennoji_%26_Abeno_Harukas.jpg/900px-Shitennoji_%26_Abeno_Harukas.jpg', alt:'四天王寺與阿倍野現代高樓', caption:['四天王寺：古代與現代大阪','寺院伽藍與阿倍野天際線同框，正好對應 20/6 的城市剖面。']},
-      {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Shitennoji_-_pagoda.jpg/900px-Shitennoji_-_pagoda.jpg', alt:'四天王寺五重塔', caption:['大阪佛教軸','四天王寺不是普通景點，而是大阪城市形成以前的宗教座標。']},
-      {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Toyama_Municipal_Folk_Museum_%28mock_keep_tower_of_the_Toyama_Castle%29_20180503.jpg/900px-Toyama_Municipal_Folk_Museum_%28mock_keep_tower_of_the_Toyama_Castle%29_20180503.jpg', alt:'富山城與城市中心', caption:['富山：城下與平野','富山城補足富山市中心的歷史感，作為入城視覺。']},
-      {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Takaoka_montage.JPG/900px-Takaoka_montage.JPG', alt:'高岡 montage：雨晴海岸、高岡大佛、瑞龍寺', caption:['高岡：海、佛與寺','高岡不只金屋町鑄造，也有雨晴、高岡大佛與瑞龍寺。']},
-      {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Zuiryuji_Temple_2010-08-29_01.jpg/900px-Zuiryuji_Temple_2010-08-29_01.jpg', alt:'瑞龍寺佛殿', caption:['瑞龍寺：前田利長的政治記憶','26/6 用瑞龍寺收束高岡線，比再硬塞氷見更穩。']},
-      {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Kanazawa_higashi_yama_2006_03_03.JPG/900px-Kanazawa_higashi_yama_2006_03_03.JPG', alt:'金沢ひがし茶屋街町家街道', caption:['金沢：茶屋街與舊町','用木格子、町家和街道尺度，接上金沢的日常肌理。']},
-      {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Stone_lantern_Kenrokuen.jpg/900px-Stone_lantern_Kenrokuen.jpg', alt:'兼六園琴柱燈籠', caption:['兼六園：庭園的標誌','清晨兼六園不是打卡，而是讀前田家庭園秩序。']},
-      {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kanazawa-higashiyama04-2006-03-03.jpg/900px-Kanazawa-higashiyama04-2006-03-03.jpg', alt:'金沢東山舊街另一角度', caption:['金沢舊町：走慢一點','尾張町、主計町和東山一帶，適合慢行而不是掃景點。']}
+      {src:'https://commons.wikimedia.org/wiki/Special:FilePath/Osaka_City_Central_Public_Hall.jpg?width=900', alt:'大阪市中央公會堂與中之島近代建築', caption:['大阪：中之島近代建築','中央公會堂把水都、商都和公共文化空間連在一起。']},
+      {src:'https://commons.wikimedia.org/wiki/Special:FilePath/Shitennoji_%26_Abeno_Harukas.jpg?width=900', alt:'四天王寺與阿倍野現代高樓', caption:['四天王寺：古代與現代大阪','寺院伽藍與阿倍野天際線同框，正好對應 20/6 的城市剖面。']},
+      {src:'https://commons.wikimedia.org/wiki/Special:FilePath/Shitennoji_-_pagoda.jpg?width=900', alt:'四天王寺五重塔', caption:['大阪佛教軸','四天王寺不是普通景點，而是大阪城市形成以前的宗教座標。']},
+      {src:'https://commons.wikimedia.org/wiki/Special:FilePath/Toyama_Municipal_Folk_Museum_%28mock_keep_tower_of_the_Toyama_Castle%29_20180503.jpg?width=900', alt:'富山城與城市中心', caption:['富山：城下與平野','富山城補足富山市中心的歷史感，作為入城視覺。']},
+      {src:'https://commons.wikimedia.org/wiki/Special:FilePath/Takaoka_montage.JPG?width=900', alt:'高岡 montage：雨晴海岸、高岡大佛、瑞龍寺', caption:['高岡：海、佛與寺','高岡不只金屋町鑄造，也有雨晴、高岡大佛與瑞龍寺。']},
+      {src:'https://commons.wikimedia.org/wiki/Special:FilePath/Zuiryuji_Temple_2010-08-29_01.jpg?width=900', alt:'瑞龍寺佛殿', caption:['瑞龍寺：前田利長的政治記憶','26/6 用瑞龍寺收束高岡線，比再硬塞氷見更穩。']},
+      {src:'https://commons.wikimedia.org/wiki/Special:FilePath/Kanazawa_higashi_yama_2006_03_03.JPG?width=900', alt:'金沢ひがし茶屋街町家街道', caption:['金沢：茶屋街與舊町','用木格子、町家和街道尺度，接上金沢的日常肌理。']},
+      {src:'https://commons.wikimedia.org/wiki/Special:FilePath/Stone_lantern_Kenrokuen.jpg?width=900', alt:'兼六園琴柱燈籠', caption:['兼六園：庭園的標誌','清晨兼六園不是打卡，而是讀前田家庭園秩序。']},
+      {src:'https://commons.wikimedia.org/wiki/Special:FilePath/Kanazawa-higashiyama04-2006-03-03.jpg?width=900', alt:'金沢東山舊街另一角度', caption:['金沢舊町：走慢一點','尾張町、主計町和東山一帶，適合慢行而不是掃景點。']}
     ];
     document.querySelectorAll('.itinerary-visual-band figure').forEach((figure,index)=>{
       const data=photos[index];
