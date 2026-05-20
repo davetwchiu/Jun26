@@ -20,8 +20,8 @@
       position:'center center'
     },
     'museums.html':{
-      image:'https://commons.wikimedia.org/wiki/Special:FilePath/21st_Century_Museum_of_Contemporary_Art,_Kanazawa.jpg?width=1200',
-      caption:'展館建築與城市公共空間',
+      image:'assets/images/10066_8_l.jpg',
+      caption:'金沢21世紀美術館：建築與公共藝術',
       position:'center center'
     },
     'osaka.html':{
