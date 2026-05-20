@@ -72,19 +72,6 @@
     if(!document.querySelector('.photo-credit-style')){const style=document.createElement('style');style.className='photo-credit-style';style.textContent='.photo-credit{display:block;margin-top:4px;font-size:.74rem;color:var(--muted);opacity:.82}';document.head.appendChild(style);}
   }
 
-  function retargetKenrokuenLinks(){
-    document.querySelectorAll('a[href$="culture-kanazawa.html#kanazawa-maeda"],a[href$="culture.html#kanazawa-maeda"]').forEach(a=>{a.href=prefix+'culture-kanazawa-kenrokuen.html';});
-  }
-  function autoLinkKenrokuen(){
-    const main=document.querySelector('main'); if(!main)return;
-    const skip=new Set(['A','SCRIPT','STYLE','TEXTAREA','INPUT','BUTTON','NOSCRIPT']);
-    const walker=document.createTreeWalker(main,NodeFilter.SHOW_TEXT,{acceptNode(node){if(!node.nodeValue||!node.nodeValue.includes('兼六園'))return NodeFilter.FILTER_REJECT;let el=node.parentElement;while(el){if(skip.has(el.tagName)||el.classList.contains('brand-title'))return NodeFilter.FILTER_REJECT;el=el.parentElement;}return NodeFilter.FILTER_ACCEPT;}});
-    const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
-    nodes.forEach(node=>{const frag=document.createDocumentFragment();node.nodeValue.split('兼六園').forEach((part,i,arr)=>{if(part)frag.appendChild(document.createTextNode(part));if(i<arr.length-1){const a=document.createElement('a');a.href=prefix+'culture-kanazawa-kenrokuen.html';a.textContent='兼六園';a.className='auto-crosslink';frag.appendChild(a);}});node.parentNode.replaceChild(frag,node);});
-  }
-  retargetKenrokuenLinks();
-  autoLinkKenrokuen();
-
   if(!document.getElementById('back-to-top')){
     const topLink=document.createElement('a');topLink.id='back-to-top';topLink.className='back-to-top';topLink.href='#top';topLink.setAttribute('aria-label','回頁首');topLink.textContent='回頁首 ↑';document.body.appendChild(topLink);
     topLink.addEventListener('click',function(e){e.preventDefault();window.scrollTo(0,0);history.replaceState(null,'',location.pathname+location.search);});
