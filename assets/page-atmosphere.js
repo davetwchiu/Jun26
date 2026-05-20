@@ -4,6 +4,11 @@
   if(inDays||file==='index.html') return;
 
   const visuals={
+    'itinerary.html':{
+      image:'assets/images/itinerary-hero.jpg',
+      caption:'從關西到北陸的行程骨架',
+      position:'center center'
+    },
     'food.html':{
       image:'assets/images/restaurant-interior.jpg',
       caption:'餐桌、器物與空間',
@@ -15,8 +20,8 @@
       position:'center center'
     },
     'museums.html':{
-      image:'assets/images/craft-cup.jpg',
-      caption:'器物與展館的安靜關係',
+      image:'https://commons.wikimedia.org/wiki/Special:FilePath/21st_Century_Museum_of_Contemporary_Art,_Kanazawa.jpg?width=1200',
+      caption:'展館建築與城市公共空間',
       position:'center center'
     },
     'osaka.html':{
