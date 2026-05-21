@@ -9,5 +9,4 @@
   }
   load('script-core.js');
   load('page-atmosphere.js');
-  load('food-kuumakun-update.js');
 })();
